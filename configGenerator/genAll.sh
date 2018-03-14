@@ -1,5 +1,5 @@
 #!/bin/sh -x
-VERSION=1.1
+VERSION=0.1
 
 mkdir -p results
 ./configGenerator.pl $VERSION x_xkb_root > "results/layout-${VERSION}.xkb"
