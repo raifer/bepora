@@ -1,4 +1,5 @@
 #!/bin/sh
 
 rm -f *~ 
-rm -f results/*
+rm -f -r results/
+rm -f *pyc
