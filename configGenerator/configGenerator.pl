@@ -370,7 +370,7 @@ sub gen_win_msklc_header($$)
 {
     my ($localeName, $localeId) = @_;
 
-    my $header = "KBD\tbepo".$SHORT_VERSION."\t\"Bépo v".$VERSION."\"\r\n".
+    my $header = "KBD\tbepora".$SHORT_VERSION."\t\"Bépora vérsion ".$VERSION."\"\r\n".
                  "\r\n".
                  "COPYRIGHT\t\"CC-SA-BY\"\r\n".
                  "\r\n".
