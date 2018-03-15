@@ -50,12 +50,13 @@ binmode STDOUT, ":utf8";
 die("Usage: $0 <version> <output format>\n")
     if (!defined($ARGV[1]));
 
+my $NAME            = "bepora";
 my $VERSION            = $ARGV[0];
 my $OUTPUT_FORMAT      = $ARGV[1];
 
-my $LAYOUT_DESCRIPTION = "layout-$VERSION.conf";
-my $DEAKEY_BEHAVIOUR   = "deads-$VERSION.conf";
-my $VIRTUAL_KEYS       = "virtualKeys-$VERSION.conf";
+my $LAYOUT_DESCRIPTION = "layout-$NAME.conf";
+my $DEAKEY_BEHAVIOUR   = "deads-$NAME.conf";
+my $VIRTUAL_KEYS       = "virtualKeys-$NAME.conf";
 
 my $KEYS_FILE         = "keys.conf";
 my $SPECIAL_KEYS_FILE = "specialKeys.conf";
@@ -63,7 +64,7 @@ my $SYMBOLS_FILE      = "symbols.conf";
 
 my $UNICODE_FILE = "UnicodeData-5.0.0.fr.txt";
 
-my $SHORT_VERSION = $VERSION;
+my $SHORT_VERSION = $NAME;
 $SHORT_VERSION =~ tr/\.//d;
 
 # Column 0: key/symbole code
@@ -326,7 +327,7 @@ sub unicode2utf8($)
 sub gen_x_xkb_header()
 {
     my $header = "partial alphanumeric_keys\nxkb_symbols \"dvorak\" {\n\n".
-                 "\tname[Group1]= \"France - Bepo, ergonomic, Dvorak way (v$VERSION)\";\n";
+                 "\tname[Group1]= \"France - Bepora, ergonomic, Dvorak way (v$NAME)\";\n";
 
     return $header;
 }
@@ -370,11 +371,11 @@ sub gen_win_msklc_header($$)
 {
     my ($localeName, $localeId) = @_;
 
-    my $header = "KBD\tbepora".$SHORT_VERSION."\t\"Bépora vérsion ".$VERSION."\"\r\n".
+    my $header = "KBD\tbepora\t\"Bépora vérsion ".$VERSION."\"\r\n".
                  "\r\n".
                  "COPYRIGHT\t\"CC-SA-BY\"\r\n".
                  "\r\n".
-                 "COMPANY\t\"Disposition bépo — http://bepo.fr\"\r\n".
+                 "COMPANY\t\"Disposition bépora — mathieu\@kolabnow.com\"\r\n".
                  "\r\n".
                  "LOCALENAME\t\"".$localeName."\"\r\n".
                  "\r\n".
@@ -959,8 +960,8 @@ sub gen_win_msklc_footer()
                  "\r\n".
                  "DESCRIPTIONS\r\n".
                  "\r\n".
-                 "0409\tFrench (bépo v$VERSION)\r\n".
-                 "040C\tFrançais (bépo v$VERSION)\r\n".
+                 "0409\tFrench (bépo v$NAME)\r\n".
+                 "040C\tFrançais (bépo v$NAME)\r\n".
                  "\r\n".
                  "LANGUAGENAMES\r\n".
                  "\r\n".
