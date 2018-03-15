@@ -5,27 +5,26 @@ REM Penser à modifier le numéro de version (set ver=...)
 REM Le nom de la dll est en dos 8.3 donc le nom de version est abrégé en rc2x
 REM Il faut ensuite faire les fichiers d'installation avec msklc
 REM (Attention a bien garder le même nom de dll.)
-set ver=01
 
 REM Création des dossiers
-md bepora-%ver%-azerty
-md bepora-%ver%
-md bepora-%ver%-qwerty
-cd bepora-%ver%-azerty
+md bepora-azerty
+md bepora
+md bepora-qwerty
+cd bepora-azerty
 md amd64
 md i386
 md ia64
 md sources
 md wow64
 cd..
-cd bepora-%ver%
+cd bepora
 md amd64
 md i386
 md ia64
 md sources
 md wow64
 cd..
-cd bepora-%ver%-qwerty
+cd bepora-qwerty
 md amd64
 md i386
 md ia64
@@ -34,44 +33,44 @@ md wow64
 cd..
 
 REM Version azerty
-copy bepora-%ver%A.klc bepora%ver%-azerty.klc
-move /y bepora%ver%-azerty.klc bepora-%ver%-azerty/sources/
-kbdutool.exe -u -s bepora-%ver%A-kbd.klc
-move /y bepora%ver%.* bepora-%ver%-azerty/sources/
-kbdutool.exe -u -x bepora-%ver%A-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%-azerty/i386/
-kbdutool.exe -u -i bepora-%ver%A-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%-azerty/ia64/
-kbdutool.exe -u -m bepora-%ver%A-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%-azerty/amd64/
-kbdutool.exe -u -o bepora-%ver%A-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%-azerty/wow64/
+copy beporaA.klc bepora-azerty.klc
+move /y bepora-azerty.klc bepora-azerty/sources/
+kbdutool.exe -u -s beporaA-kbd.klc
+move /y bepora.* bepora-azerty/sources/
+kbdutool.exe -u -x beporaA-kbd.klc
+move /y bepora.dll bepora-azerty/i386/
+kbdutool.exe -u -i beporaA-kbd.klc
+move /y bepora.dll bepora-azerty/ia64/
+kbdutool.exe -u -m beporaA-kbd.klc
+move /y bepora.dll bepora-azerty/amd64/
+kbdutool.exe -u -o beporaA-kbd.klc
+move /y bepora.dll bepora-azerty/wow64/
 
 REM Version bépo simple
-copy bepora-%ver%b.klc bepora%ver%.klc
-move /y bepora%ver%.klc bepora-%ver%/sources
-kbdutool.exe -u -s bepora-%ver%B-kbd.klc
-move /y bepora%ver%.* bepora-%ver%/sources/
-kbdutool.exe -u -x bepora-%ver%B-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%/i386/
-kbdutool.exe -u -i bepora-%ver%B-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%/ia64/
-kbdutool.exe -u -m bepora-%ver%B-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%/amd64/
-kbdutool.exe -u -o bepora-%ver%B-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%/wow64/
+copy beporab.klc bepora.klc
+move /y bepora.klc bepora/sources
+kbdutool.exe -u -s beporaB-kbd.klc
+move /y bepora.* bepora/sources/
+kbdutool.exe -u -x beporaB-kbd.klc
+move /y bepora.dll bepora/i386/
+kbdutool.exe -u -i beporaB-kbd.klc
+move /y bepora.dll bepora/ia64/
+kbdutool.exe -u -m beporaB-kbd.klc
+move /y bepora.dll bepora/amd64/
+kbdutool.exe -u -o beporaB-kbd.klc
+move /y bepora.dll bepora/wow64/
 
 
 REM Version qwerty
-copy bepora-%ver%C.klc bepora%ver%-qwerty.klc
-move /y bepora%ver%-qwerty.klc bepora-%ver%-qwerty/sources/
-kbdutool.exe -u -s bepora-%ver%C-kbd.klc
-move /y bepora%ver%.* bepora-%ver%-qwerty/sources/
-kbdutool.exe -u -x bepora-%ver%C-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%-qwerty/i386/
-kbdutool.exe -u -i bepora-%ver%C-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%-qwerty/ia64/
-kbdutool.exe -u -m bepora-%ver%C-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%-qwerty/amd64/
-kbdutool.exe -u -o bepora-%ver%C-kbd.klc
-move /y bepora%ver%.dll bepora-%ver%-qwerty/wow64/
+copy beporaC.klc bepora-qwerty.klc
+move /y bepora-qwerty.klc bepora-qwerty/sources/
+kbdutool.exe -u -s beporaC-kbd.klc
+move /y bepora.* bepora-qwerty/sources/
+kbdutool.exe -u -x beporaC-kbd.klc
+move /y bepora.dll bepora-qwerty/i386/
+kbdutool.exe -u -i beporaC-kbd.klc
+move /y bepora.dll bepora-qwerty/ia64/
+kbdutool.exe -u -m beporaC-kbd.klc
+move /y bepora.dll bepora-qwerty/amd64/
+kbdutool.exe -u -o beporaC-kbd.klc
+move /y bepora.dll bepora-qwerty/wow64/
