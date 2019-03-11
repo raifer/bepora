@@ -28,3 +28,4 @@ mkdir -p results
 #./keytables.py   "results/layout-bepora.xkb" "results/layout-bepora.keytables"
 
 perl -p -e 's#\tinclude "pc\(pc105\)"#\tinclude "pc/pc(pc105)"#g' "results/layout-bepora-user.xkb" > "results/layout-bepora-user-legacy.xkb"
+perl klc2ini.pl results/beporaB.klc
